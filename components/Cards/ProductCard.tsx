@@ -37,7 +37,7 @@ const ProductCard: FC<ProductCardProps> = ({ product, onAddToCart }) => {
           </span>
         )}
       </div>
-      
+
       <div className="flex flex-col justify-between h-1/2 mt-4 px-2">
         <h5 className="text-xl font-semibold tracking-tight text-slate-900">{product.title}</h5>
         <div className="mt-2 mb-5 flex items-baseline">

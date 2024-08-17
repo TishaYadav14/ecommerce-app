@@ -15,8 +15,12 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   tax,
   totalAfterDiscountAndTax,
 }) => {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
 //   console.log(discount);
+
+const handlecheckout = () => {
+  clearCart();
+}
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-md">
@@ -50,7 +54,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
         <span>${totalAfterDiscountAndTax.toFixed(2)}</span>
       </div>
       <Link href="/checkout">
-        <button className="w-full bg-slate-900 text-white py-2 mt-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+        <button onClick={handlecheckout} className="w-full bg-slate-900 text-white py-2 mt-4 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
           Proceed to Checkout
         </button>
       </Link>
